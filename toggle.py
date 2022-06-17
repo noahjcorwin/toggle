@@ -28,7 +28,7 @@ def verify_token(token):
 @auth.login_required
 def toggleon():
     for item in black_list:
-        command = ['pihole','--regex',item]
+        command = ['/usr/local/bin/pihole','--regex',item]
         proc = subprocess.Popen(command,
             stdout = subprocess.PIPE,
             stderr = subprocess.PIPE,
@@ -43,7 +43,7 @@ def toggleon():
 @auth.login_required
 def toggleoff():
     for item in black_list:
-        command = ['pihole','--regex',item,'-d']
+        command = ['/usr/local/bin/pihole','--regex',item]
         proc = subprocess.Popen(command,
             stdout = subprocess.PIPE,
             stderr = subprocess.PIPE,
