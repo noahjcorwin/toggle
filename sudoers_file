@@ -1,0 +1,3 @@
+# /etc/sudoers.d/toggle
+www-data ALL=NOPASSWD: /usr/bin/python3 /opt/toggle/on.py
+www-data ALL=NOPASSWD: /usr/bin/python3 /opt/toggle/off.py
