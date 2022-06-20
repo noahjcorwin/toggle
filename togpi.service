@@ -1,0 +1,10 @@
+# /etc/systemd/system/togpi.service
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/opt/toggle
+Environment="PATH=/opt/toggle/togpi/bin"
+ExecStart=/opt/toggle/togpi/bin/gunicorn --workers 3 --bind unix:togpi.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
